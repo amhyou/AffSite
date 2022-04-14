@@ -1,0 +1,25 @@
+<section class="w-article-related">
+        <div class="section-header">
+          <h3 class="section-title">Read Next</h3>
+        </div>
+        <div class="sentinel-article-relatedContent browse-grid col-1 col-t-2 col-d-4 clip-full">
+         
+         {% for art in relar %}
+          <article class="browse-clip js-content" data-content-id=":562778">
+            <a class="bc-img-link" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{art.subject}}/{{art.id}}">
+            <div class="bc-img responsive-img img-size-full">
+              <figure>
+                <picture><!--[if IE 9]>
+            <video style="display: none;"><![endif]-->
+                 <!--[if IE 9]></video><![endif]-->
+                 <img class="lazyloaded" alt="{{art.headline}}" src="{{art.image.url}}" srcset="" sizes="" width="1680" height="840"></picture>
+              </figure>
+            </div></a>
+            <div class="bc-info">
+              <h3 class="bc-title"><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{art.subject}}/{{art.id}}" class="bc-title-link" title="{{art.headline}}">{{art.headline}}</a></h3>
+            </div>
+          </article>
+          {% endfor %}
+
+        </div>
+      </section>

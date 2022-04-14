@@ -1,0 +1,46 @@
+{% extends "headfoot.html" %}
+
+{% block "kolxi" %}
+
+<div class="w-content">
+  <script type="application/ld+json" class="sf-hidden">
+  {"@context":"http://schema.org","@type":"Organization","@id":"https://www.makeuseof.com/#organization","name":"MUO","url":"https://www.makeuseof.com","foundingDate":"2007","sameAs":["https://www.youtube.com/muotv","https://www.facebook.com/muo.official","https://www.instagram.com/muoofficial/","https://twitter.com/MUO_official","https://www.pinterest.ca/muo_official/"],"logo":{"@type":"ImageObject","url":"https://www.makeuseof.com/public/build/images/muo-amp-logo.2eef8ce3.png","caption":"MUO Logo"}}
+  </script>
+  <div class="w-home">
+    <div class="adzone-above-latest"></div>
+    <section class="home-latest">
+      <div class="section-header">
+        <h2 class="section-title">Latest</h2>
+      </div>
+      <div class="sentinel-home-list browse-half col-1 clip-half">
+
+        {% for art in arts %}
+        <article class="browse-clip item-1 js-content" data-content-id=":344258">
+          <a class="bc-img-link" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{art.subject}}/{{art.id}}">
+          <div class="bc-img responsive-img img-size-half">
+            <figure>
+              <picture><!--[if IE 9]>
+            <video style="display: none;"><![endif]-->
+               <!--[if IE 9]></video><![endif]-->
+               <img class="lazyloaded" alt="Z" src="{{ art.image.url }}" srcset="" sizes="" width="1680" height="840"></picture>
+            </figure>
+          </div></a>
+          <div class="bc-info">
+            <div class="bc-listing-categories">
+              <a class="bc-listing-categories-link" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{art.subject}}">{{art.subject}}</a>
+            </div>
+            <h3 class="bc-title"><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{art.subject}}/{{art.id}}" class="bc-title-link" title="{{art.headline}}">{{art.headline}}</a></h3>
+            <p class="bc-excerpt">{{art.summary}}</p>
+          </div>
+        </article>
+        {% endfor %}
+
+      </div>
+      <span id="home-waypoint">&nbsp;</span> <a class="infinite-btn-next" style="display:none" href="https://www.makeuseof.com/archive/2/">Show More</a>
+    </section>
+
+    {% include "trending.html" %}
+
+  </div>
+</div>
+{% endblock "kolxi" %}
