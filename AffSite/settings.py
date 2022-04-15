@@ -29,11 +29,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["http://*.herokuapp.com","https://*.herokuapp.com"]
-CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -141,6 +142,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
