@@ -25,7 +25,7 @@ import django_heroku
 SECRET_KEY = 'django-insecure-11_amx^&rkd42q&-3i6gvolg_ycdlvj^)p=81lj&0+1h*sah8-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["http://*.herokuapp.com","https://*.herokuapp.com"]
