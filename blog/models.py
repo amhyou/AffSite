@@ -13,7 +13,7 @@ class Article(models.Model):
 	headline = models.CharField(max_length=100)
 	summary  = models.TextField(max_length=10**3)
 	content  = RichTextField()
-	image    = models.ImageField(upload_to ='static/')
+	image    = models.ImageField(upload_to ='staticfiles/')
 	subject  = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
 	def __str__(self):
