@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+
 class Topic(models.Model):
 	name  = models.CharField(max_length=100)
 	descr = models.CharField(max_length=10**3)
