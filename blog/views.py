@@ -4,7 +4,7 @@ from django.forms import ModelForm
 from django.contrib import messages
 
 def index(request):
-	arts = Article.objects.all()
+	arts = Article.objects.order_by('?')
 	topics = Topic.objects.all()
 	fit = Article.objects.order_by('?')
 	wirea = fit[0]
