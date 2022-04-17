@@ -30,6 +30,7 @@ class MSG(models.Model):
 		return self.mail
 
 class Aboutme(models.Model):
+	logo = models.ImageField(upload_to ='static/')
 	name = models.CharField(max_length=100)
 	address = models.TextField(max_length = 254)
 	email = models.EmailField(max_length = 254)
