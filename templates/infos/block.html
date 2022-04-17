@@ -1,0 +1,149 @@
+{% load static %}
+<html style="" lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width">
+  <link rel="stylesheet" type="text/css" href="{% static 'style3.css' %}">
+  <style type="text/css">
+    .header-logo{
+    background:url('{{ logoni.logo.url }}') no-repeat 50%;
+    width:68px
+    }
+    .footer:before{
+    background:url('{{ logoni.logo.url }}') no-repeat 50%;
+    width:127px;
+    height:30px
+    }
+  </style>
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="amphtml" href="https://www.makeuseof.com/tag/top-3-free-digital-painting-apps-android/amp/">
+  <link rel="canonical" href="https://www.makeuseof.com/tag/top-3-free-digital-painting-apps-android/">
+  <title>About</title>
+  <meta name="description" content="Here are all the best painting apps for Android that let you draw, sketch, and create digital art on your phone or tablet.">
+  <meta property="og:title" content="The 10 Best Drawing and Painting Apps for Android">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2014/05/android-phone-draw-paint.jpg">
+  <meta property="og:image:width" content="1680">
+  <meta property="og:image:height" content="840">
+  <meta property="og:url" content="https://www.makeuseof.com/tag/top-3-free-digital-painting-apps-android">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="Here are all the best painting apps for Android that let you draw, sketch, and create digital art on your phone or tablet.">
+  <meta property="og:site_name" content="MUO">
+  <meta property="article:published_time" content="2020-02-13T21:00:00Z">
+  <meta property="article:modified_time" content="2022-04-06T13:15:14Z">
+  <meta property="article:section" content="Android">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@MUO_official">
+  <meta name="twitter:title" content="The 10 Best Drawing and Painting Apps for Android">
+  <meta name="twitter:description" content="Here are all the best painting apps for Android that let you draw, sketch, and create digital art on your phone or tablet.">
+  <meta name="twitter:image" content="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2014/05/android-phone-draw-paint.jpg">
+  <meta property="fb:app_id" content="172826243054377">
+  <link rel="icon" sizes="240x240" href="{{ logoni.logo.url }}">
+
+ </head>
+<body class="js-tldr">
+  <div id="body-anchor"></div>
+  <div class="w-website">
+    <div id="pageStickyFooterAd"></div>
+    <div id="js-header" class="w-header">
+      <header class="header" itemscope="" itemtype="https://schema.org/WPHeader">
+        <h1 class="hide" itemprop="headline"><a class="vglnk" target="_blank" href="http://www.makeuseof.com/" rel="nofollow"><span>www</span><span>.</span><span>makeuseof</span><span>.</span><span>com</span></a></h1>
+        <div class="header-logo">
+          <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/" title="" rel="home"></a>
+        </div><input class="header-menu-btn-input" type="checkbox" id="headerMenu">
+        <div class="menu-burger-btn"></div>
+        <div class="w-header-menu">
+          <div class="header-menu">
+            <nav class="menu-nav" id="menu-site">
+              <ul class="menu-nav-list" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+                
+                {% for topic in topics %}
+                <li itemprop="name">
+                  <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{topic.name}}" itemprop="url">{{topic.name}}</a>
+                </li>
+                {% endfor %}
+      
+                 <li itemprop="name" class="w-drop-down">
+                  <button class="menu-nav-more-btn js-menu-open">About</button>
+                  <ul class="drop-down">
+                    <li itemprop="name">
+                      <a href="{% url 'about' %}" itemprop="url">About Us</a>
+                    </li>
+                    <li itemprop="name">
+                      <a href="{% url 'contact' %}" itemprop="url">Contact</a>
+                    </li>
+                    <li itemprop="name">
+                      <a href="{% url 'terms' %}" itemprop="url">Terms</a>
+                    </li>
+                    <li itemprop="name">
+                      <a href="{% url 'privacy' %}" itemprop="url">Privacy</a>
+                    </li>
+                    <li itemprop="name">
+                      <a href="{% url 'copyright' %}" itemprop="url">Copyright</a>
+                    </li>
+                  </ul>
+                </li>
+
+
+              </ul>
+            </nav>
+           
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="w-header-search js-search-target">
+      <button id="js-exit-search" class="header-search-exit icon i-close"></button>
+      <div class="header-search">
+        <form method="post" class="search-form js-searchBox icon i-search" id="searchform2" action="/search" name="searchform2"></form><input id="js-search-input" type="text" name="keyword" class="input-text search-input" autocomplete="off" placeholder="Search MUO" autofocus="" value="">
+      </div>
+    </div>
+
+
+    <div class="w-content">
+      <article class="w-article article">
+        <section id="article-body" class="article-body" itemprop="articleBody">
+    {% block "about" %}
+    {% endblock "about" %}
+     </section>
+      </article>
+    </div>
+    
+
+  
+    <footer class="w-footer">
+      <div class="footer">
+        <nav class="menu-legal">
+          <ul>
+            <li>
+              <a class="menu-home" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/">Home</a>
+            </li>
+            <li>
+              <a class="menu-contact-us" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            <li>
+              <a class="menu-terms" href="{% url 'terms' %}">Terms</a>
+            </li>
+            <li>
+              <a class="menu-privacy" href="{% url 'privacy' %}">Privacy</a>
+            </li>
+            <li>
+              <a class="menu-copyright" href="{% url 'copyright' %}">Copyright</a>
+            </li>
+            <li>
+              <a class="menu-about-us" href="{% url 'about' %}">About Us</a>
+            </li>
+            
+            
+            
+            
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-copy">
+        Copyright © 2022 {{ request.META.HTTP_HOST }}
+      </div>
+    </footer>
+  </div>
+
+</body></html>
