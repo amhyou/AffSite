@@ -1,0 +1,4 @@
+/staticfiles
+/static
+*.pyc
+db.sqlite3
